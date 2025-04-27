@@ -7,6 +7,7 @@
 
 <h1>Data dari API:</h1>
 <div id="data-container">
+
   </div>
 
 <script>
@@ -32,7 +33,8 @@
 
   function displayData(data) {
     const dataContainer = document.getElementById('data-container');
-    dataContainer.innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+    dataContainer.innerHTML = 
+    '<p>JUMLAH ORMAS SAAT INI' + JSON.stringify(data.data[0]['jumlah_ormas_berbadan_hukum'], null, 2) + ' di '+ JSON.stringify(data.data[0]['provinsi'], null, 2) +'</p>';
     // Anda bisa memodifikasi bagian ini untuk menampilkan data dalam format yang lebih menarik
   }
 
