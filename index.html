@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fetch Data Otomatis</title>
+</head>
+<body>
+
+<h1>Data dari API:</h1>
+<div id="data-container">
+  </div>
+
+<script>
+
+  let urlkuh = 'https://api-e-database.kemendagri.go.id/dataset/1208?sub=tabel&page=1&kode_wilayah=&provinsi=jawa barat&jumlah_ormas_ber_skt=&jumlah_ormas_berbadan_hukum=';
+
+  function fetchData() {
+    fetch(urlkuh) // Ganti dengan URL API yang sebenarnya
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        displayData(data);
+      })
+      .catch(error => {
+        console.error('Gagal mengambil data:', error);
+        document.getElementById('data-container').innerText = 'Gagal mengambil data.';
+      });
+  }
+
+  function displayData(data) {
+    const dataContainer = document.getElementById('data-container');
+    dataContainer.innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+    // Anda bisa memodifikasi bagian ini untuk menampilkan data dalam format yang lebih menarik
+  }
+
+  // Panggil fetchData pertama kali saat halaman dimuat
+  fetchData();
+
+  // Atur interval untuk memanggil fetchData setiap 10 detik (10000 milidetik)
+  setInterval(fetchData, 10000);
+</script>
+
+</body>
+</html>
