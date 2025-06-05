@@ -17,6 +17,7 @@ var json ={"refresh_token":"0NJEr2LVDruDqufG3eBXpO98tEEDHLH8CqXkMDzWFvHynKceCT34
 		
               xhr.open("POST",
                        "https://node.bolt.eu/business-portal/businessPortal/getAccessToken?version=BP.21.59&session_id=779476b174913103", true);
+		     xhr.setRequestHeader('Referer', '');
 xhr.setRequestHeader('Content-Type', 'application/json')
          
 xhr.send(JSON.stringify(json))
