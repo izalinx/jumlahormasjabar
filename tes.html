@@ -15,13 +15,15 @@
 	
                  }
              };
-              xhr.open("GET","https://www.opposhop.cn/cn/oapi/orders/web/cart/v1/list?opca=", true);
+              xhr.open("GET","https://www.opposhop.cn/cn/oapi/users/web/member/info", true);
               //https://www.opposhop.cn/cn/oapi/orders/web/cart/v1/list?opca=
               //https://www.opposhop.cn/cn/oapi/configs/web/tdk?code=my-order
               //https://www.opposhop.cn/cn/oapi/configs/web/tdk?code=my-coupons
               //https://www.opposhop.cn/cn/oapi/configs/web/tdk?code=my-comments
+             
+             
               xhr.withCredentials = true;
-		          xhr.setRequestHeader('Referer', 'https://www.opposhop.cn/');
+		          xhr.setRequestHeader('Referer', 'https://www.opposhop.cn/cn/oapi/users/web/member/info');
               xhr.setRequestHeader('Origin', 'https://www.opposhop.cn/');
               xhr.send();
 
